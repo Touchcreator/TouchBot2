@@ -5,7 +5,6 @@ import random
 from MeowerBot.ext.help import Help
 
 bot = Bot()
-help = Help(bot)
 
 
 
@@ -106,7 +105,8 @@ def login(bot=bot):
   else:
     bot.send_msg("Hello! I'm TouchBot2. Use @TouchBot2 help to learn my commands.", to="home")
 
-help.generate_help()
+help = Help(bot)
 bot.register_cog(help)
+help.generate_help()
 bot.callback(login, cbid="login")
 bot.run("TouchBot2", "password")
