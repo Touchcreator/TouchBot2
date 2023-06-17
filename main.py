@@ -2,9 +2,14 @@ from MeowerBot import Bot
 import requests
 import json
 import random
-import keepalive
+from MeowerBot.ext.help import Help
 
 bot = Bot()
+help = Help(bot)
+help.generate_help()
+bot.register_cog(help)
+
+
 
 testing = False
 
@@ -101,8 +106,7 @@ def login(bot=bot):
   if testing == True:
     bot.send_msg("Hello! I'm TouchBot. Learn the commands yourself idiot.", to="a1972a25-d698-404a-a4a1-d10c2599a4ba")
   else:
-    bot.send_msg("Hello! I'm TouchBot2. Learn the commands yourself idiot.", to="home")
+    bot.send_msg("Hello! I'm TouchBot2. Use @TouchBot2 help to learn my commands.", to="home")
 
-keepalive.keep_alive()
 bot.callback(login, cbid="login")
 bot.run("TouchBot2", "password")
