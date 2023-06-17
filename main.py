@@ -8,7 +8,6 @@ bot = Bot()
 
 testing = False
 
-
 jobs = ["You saw some cash spawn in your house, it was ", "You worked so hard and made ", "After your long day at you you made ", "Your cousin gave you ", "Your mom gave you ", "You found some cash laying on the floor, after counting it, it was "]
 
 def quoteget():
